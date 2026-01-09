@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "WebFetch(domain:api-docs.deepseek.com)",
+      "WebSearch",
+      "Bash(streamlit run:*)",
+      "Bash(git add:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(pip show:*)",
+      "Bash(findstr:*)",
+      "Bash(pip install httpx -q)",
+      "Bash(tasklist)",
+      "Bash(setx:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(pip install:*)"
+    ]
+  }
+}

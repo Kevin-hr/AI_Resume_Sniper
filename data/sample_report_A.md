@@ -1,37 +1,23 @@
 ## 1. 🎯 Match Score (0-100)
-**Score: 78/100**
+**Score: 75**
 
-**Analysis:** This resume lands squarely in the backup pile. The candidate has a strong foundational fit with relevant B2B SaaS and AI experience, and the resume structure is decent. However, it lacks the sharp, metrics-driven precision and explicit keyword alignment required to pass a top-tier ATS and survive a 6-second HR screen at a FAANG/BAT level. It's good, but not great. It requires work to become interview-invite material.
-
----
+**Rationale:** This is a competent resume that lands in the backup pile. The candidate has relevant B2B SaaS and AI product experience, and the STAR format is a plus. However, the resume fails to make an immediate, unambiguous connection to the *specific* requirements of the JD, requiring the screener to infer and connect the dots. It lacks the sharp, keyword-dense precision needed to guarantee a pass in a 6-second scan against a high-volume ATS.
 
 ## 2. 🚩 Fatal Red Flags (The "Why No")
-An HR screener at a tech giant would likely reject this resume in under 6 seconds for these reasons:
-
-1.  **Vague & Generic "Professional Summary":** The summary is fluffy. Phrases like "Product Leader," "Proven track record," and "Expert in translating..." are claims, not evidence. It fails to immediately scream "AI Product Manager (B-End SaaS)" with hard-hitting, JD-specific keywords. It's wasted prime real estate.
-2.  **Missing Explicit JD Keyword Hits:** The resume does not explicitly state **"B端 SaaS成功案例" (B-end SaaS success case)** or **"从0到1落地" (launch from 0 to 1)** in a way that an ATS scanner or a hurried HR person can instantly spot. The experience implies it, but doesn't declare it with the exact language from the JD.
-3.  **Underwhelming "Skills" Section:** Listing "Python (Data Analysis)" and "SQL" is weak. The JD demands **"建立产品数据指标体系" (establish product data indicator system)**. The resume should show this skill through a bullet point, not just list tools. Similarly, **"高质量的 PRD 文档" (high-quality PRD)** is mentioned but not proven with an outcome (e.g., "PRD reduced development rework by X%").
-
----
+1.  **Missing Explicit JD Keyword Match:** The resume uses "B2B SaaS" and "LLM," but the JD's critical phrases **"B端 SaaS"** and **"大模型 (LLM)"** are absent. For an ATS and a non-English-speaking HR screener, this is a direct mismatch. The term "B-End" is non-standard and weak.
+2.  **Vague on Core JD Technology:** The JD explicitly requires familiarity with **"RAG, Fine-tuning, Prompt Engineering"**. The resume lists "RAG Architecture" and "Prompt Engineering" under skills, but the work experience bullet for "Contract AI" only mentions "RAG-based system" without detailing the candidate's *hands-on* involvement with these specific techniques, making their depth of understanding questionable.
+3.  **Weak Quantification of "Success Case":** The JD prioritizes candidates with **"B 端 SaaS 成功案例"**. While the resume claims "generating over ¥5M in ARR" and "15 key enterprise accounts," it buries the *direct attribution* of this success to the candidate's specific actions. The link between their daily work and the commercial outcome is implied, not proven with ruthless clarity.
 
 ## 3. 💎 The "Money" Bullet Points (STAR Rewrite)
 **Selected Experience:** Senior Product Manager | TechFlow Solutions (2021 - Present) - "Contract AI" Project.
 
-This is the most relevant experience. Below is a rewrite optimized for HR and ATS scanning.
+**Rewritten Bullets (HR & ATS Optimized):**
 
-*   **Situation & Task:** To address enterprise clients' critical inefficiency in manual legal contract review (averaging 4 hours per contract), I was tasked with leading the **from-0-to-1 development** of "Contract AI," a B2B SaaS tool, to automate risk detection and directly generate revenue.
-*   **Action:** I defined the product strategy and authored the core PRD for a **RAG-based architecture** utilizing DeepSeek-V3, ensuring seamless collaboration with algorithm engineers. I conducted over 20 user interviews with legal teams to design a "One-Click Risk Detection" feature, and drove the **cross-functional coordination** of a 7-member team (5 engineers, 2 designers) to deliver the market-ready MVP within a strict 3-month timeline.
-*   **Result:** The product became a **successful B-end SaaS case**, achieving 90% accuracy in risk identification. It reduced average client contract review time by 70% (from 4 hours to 1.2 hours), directly contributing to securing 15 key enterprise accounts and generating **¥2.5M in first-year ARR**.
-
----
+*   **Situation & Task:** To address enterprise clients' inefficiency in manual legal contract review (averaging 4 hours per document), I was tasked with leading the **从 0 到 1 (0-to-1)** development of "Contract AI," a **B端 SaaS** product leveraging **大模型 (LLM)** and **RAG** technology to automate risk analysis.
+*   **Action:** I authored the core PRD defining the **RAG** architecture and **Prompt Engineering** rules for consistent output. I conducted over 20 user interviews with legal teams to iteratively design the "One-Click Risk Detection" feature, and managed a cross-functional squad of 5 engineers and 2 designers through agile sprints to deliver the MVP.
+*   **Result:** The product achieved **90% accuracy** in risk identification, **reducing average contract review time by 70%** (from 4 hrs to 1.2 hrs). This value proposition directly secured **15 enterprise contracts**, contributing **¥2.5M in first-year ARR** and establishing a **successful B端 SaaS case study** for the sales team.
 
 ## 4. 💡 Quick Fixes (Actionable Advice)
-Do these three things immediately to push your score above 85.
-
-1.  **Rewrite the Professional Summary as a "Targeted Value Proposition":** Start with the exact job title. Integrate JD keywords and lead with your biggest ROI.
-    *   **Example:** "AI Product Manager (B2B SaaS) with 6 years of experience, specializing in **从0到1落地 (0-to-1 launches)** of LLM-powered enterprise tools. Proven **B端 SaaS成功案例 (B-end SaaS success case)**: built a contract analysis product that secured 15 enterprise clients and **¥2.5M ARR** within the first year."
-2.  **Infect Every Bullet Point with JD Keywords:** Scour the JD and ensure each responsibility and requirement is mirrored in your experience bullets.
-    *   **For "数据驱动" (Data-Driven):** Add a bullet: "**Established the core data指标体系 (indicator system)** for product engagement, tracking feature adoption and user retention, which informed quarterly roadmap priorities that increased user activation by [X%]."
-    *   **For "技术理解" (Technical Understanding):** Change "RAG Architecture" to "**Designed and specified RAG system architecture** in PRD for engineering execution."
-3.  **Quantify the "Soft" Achievements:** The "Mentored junior PMs" bullet is worthless as-is. Turn it into a value statement.
-    *   **Rewrite:** "Mentored 2 junior PMs and **created the company-standard PRD template**, which reduced average requirement clarification meetings by 30% and improved project delivery predictability."
+1.  **Mirror the JD Language Precisely:** In the "Target Role" and "Professional Summary," change "B-End SaaS" to **"B端 SaaS"**. In the skills and experience bullets, explicitly use the Chinese terms **"大模型 (LLM)"** and **"B端"** alongside their English equivalents. This is non-negotiable for ATS parsing and HR recognition.
+2.  **Front-Load the "Success Case" Metric:** The first bullet of your professional summary must state: **"Delivered a successful B端 SaaS AI product case study, generating ¥2.5M ARR from 15 enterprise clients within the first year."** Move the value from the back (buried in a result) to the very front.
+3.  **Quantify Your "Technical Understanding":** In the "Contract AI" action bullet, add a sub-bullet: **"Applied Fine-tuning principles to optimize the base LLM (DeepSeek-V3) for legal domain terminology, improving key metric accuracy by [X%]."** If you didn't do fine-tuning, specify your hands-on work with RAG or Prompt Engineering. Show you didn't just "coordinate," you *applied*.

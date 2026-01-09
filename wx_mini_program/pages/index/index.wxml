@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="header">
+    <text class="title">AI 简历狙击手 🎯</text>
+    <text class="subtitle">HRD 视角的简历深度诊断</text>
+  </view>
+
+  <view class="section">
+    <text class="label">1. 目标职位描述 (JD)</text>
+    <textarea 
+      class="jd-input" 
+      placeholder="请粘贴目标职位的 JD 内容..." 
+      bindinput="onJdInput"
+      maxlength="-1"
+    />
+  </view>
+
+  <view class="section">
+    <text class="label">2. 上传简历 (PDF/Word)</text>
+    <view class="upload-box" bindtap="chooseResume">
+      <text wx:if="{{!resumeFile}}">点击选择文件</text>
+      <text wx:else class="file-name">📄 {{resumeFile.name}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="label">3. 选择分析角色</text>
+    <radio-group class="persona-group" bindchange="onPersonaChange">
+      <label class="radio">
+        <radio value="hrbp" checked="true"/>毒舌 HRD
+      </label>
+      <label class="radio">
+        <radio value="coach"/>温和导师
+      </label>
+    </radio-group>
+  </view>
+
+  <button 
+    class="analyze-btn" 
+    type="primary" 
+    bindtap="startAnalysis" 
+    loading="{{loading}}"
+    disabled="{{loading}}"
+  >
+    开始诊断
+  </button>
+
+  <view class="result-section" wx:if="{{result}}">
+    <view class="result-header">
+      <text class="result-title">诊断报告</text>
+      <text class="score">匹配度: {{result.score || 'N/A'}}</text>
+    </view>
+    <text class="report-content" user-select="true">{{result.report}}</text>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+streamlit
+openai
+python-dotenv
+pdfplumber
+python-docx
+pyyaml
+anthropic
+httpx
+fastapi
+uvicorn
+python-multipart
+streamlit

@@ -1,0 +1,8 @@
+INFO:     Started server process [31000]
+INFO:     Waiting for application startup.
+INFO:api_server:Initializing Resume Sniper Engine...
+INFO:api_server:Engine initialized successfully.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:api_server:Received JD file: jd.txt (.txt)
+INFO:api_server:Received file: resume.txt (.txt)

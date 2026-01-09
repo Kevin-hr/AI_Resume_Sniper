@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #007AFF; /* Apple Blue */
+  --color-background: #F5F5F7; /* Apple Gray */
+  --color-surface: #FFFFFF;
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--color-background);
+  color: #1D1D1F;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}

@@ -1,0 +1,6 @@
+
+Senior Python Developer
+Requirements:
+- 5+ years experience with Python
+- Experience with FastAPI and React
+- Strong SQL skills

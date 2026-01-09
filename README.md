@@ -12,11 +12,51 @@
 *   **🚀 职场外挂 (Career Cheat)**：用信息差打破职场天花板。
 
 ### 技术栈 (Tech Stack)
-*   **核心逻辑**: Python 3.9+
-*   **Web 界面**: Streamlit
-*   **AI 引擎**: 支持 DeepSeek / OpenAI / Anthropic
-*   **文档解析**: pdfplumber, python-docx
-*   **配置管理**: YAML + 环境变量
+*   **Backend Core**: Python 3.9+ (FastAPI)
+*   **Frontend**: React 18 + TypeScript + Vite (TailwindCSS)
+*   **AI Engine**: DeepSeek-V3 (Reasoning Mode Support) / OpenAI / Anthropic
+*   **Document Parsing**: pdfplumber (PDF), python-docx (DOCX)
+*   **Config Management**: YAML + Environment Variables
+
+---
+
+## ✅ 已实现功能 (Implemented Features)
+
+### 1. 核心分析引擎
+- [x] **多维简历审计**：基于 HRBP 视角的 6 秒快速筛选模拟，提供评分、红旗预警及 STAR 法则重写建议。
+- [x] **深度思考模式**：集成 DeepSeek R1/V3 的 Reasoning 模式，实时展示 AI 的“思考过程”，拒绝黑盒。
+- [x] **流式响应 (Streaming)**：打字机效果实时输出，解决长文本等待焦虑。
+
+### 2. 多模态文档解析
+- [x] **广泛格式支持**：原生解析 PDF, DOCX, TXT, MD 格式简历与 JD。
+- [x] **智能容错**：自动处理格式混乱的文本，提取核心关键信息。
+
+### 3. 现代化前端交互
+- [x] **极速 UI**：基于 React + Vite 构建的响应式界面，操作丝滑。
+- [x] **实时反馈**：可视化上传进度、分析状态及错误提示。
+- [x] **沉浸式体验**：自动滚动、Markdown 渲染、代码高亮。
+
+### 4. 企业级架构
+- [x] **插件化 LLM 适配器**：已支持 DeepSeek (默认), OpenAI, Anthropic，可无缝扩展。
+- [x] **配置中心**：支持 YAML 配置文件与环境变量双重管理，敏感信息自动脱敏。
+
+---
+
+## 🗺️ 路线图 (Roadmap)
+
+### Phase 1: 核心体验打磨 (Current)
+- [x] 解决流式传输卡顿与超时问题
+- [x] 支持 DeepSeek Reasoning Content 可视化
+- [ ] **多 Persona 切换**：前端支持选择“严厉 HR”、“温和 Coach”或“产品经理”视角。
+- [ ] **历史记录管理**：本地存储分析记录，支持回溯与对比。
+
+### Phase 2: 批量与自动化 (Next Step)
+- [ ] **批量简历初筛**：HR 模式，一键上传 100+ 份简历，自动生成 CSV 排名报表。
+- [ ] **职位匹配雷达**：求职者模式，上传 1 份简历 + N 个 JD，自动生成投递优先级建议。
+
+### Phase 3: 移动端与生态
+- [ ] **微信小程序适配**：基于 Uni-app 或原生小程序开发，实现“拍照评简历”。
+- [ ] **浏览器插件**：Chrome Extension，在 Boss 直聘/拉勾页面直接透视职位匹配度。
 
 ---
 

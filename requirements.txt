@@ -1,4 +1,3 @@
-streamlit
 openai
 python-dotenv
 pdfplumber
@@ -9,4 +8,3 @@ httpx
 fastapi
 uvicorn
 python-multipart
-streamlit

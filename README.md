@@ -68,6 +68,8 @@
 *   至少一个 LLM API Key (DeepSeek / OpenAI / Anthropic)
 
 ### 依赖安装
+
+#### 后端 (Backend)
 ```bash
 # 1. 进入项目目录
 cd AI_Resume_Sniper
@@ -80,10 +82,13 @@ python -m venv venv
 source venv/bin/activate
 
 # 3. 安装依赖
-pip install streamlit openai python-dotenv pdfplumber python-docx pyyaml
+pip install -r requirements.txt
+```
 
-# 可选: Anthropic 支持
-pip install anthropic
+#### 前端 (Frontend)
+```bash
+cd frontend-web
+pnpm install
 ```
 
 ### 环境配置
@@ -99,11 +104,23 @@ pip install anthropic
 
 ## 3. 使用说明 (Usage)
 
-### 快速启动 (Web UI)
+### 启动应用 (Start App)
+
+需要分别启动后端 API 和前端界面。
+
+**1. 启动后端 (Terminal 1)**
 ```bash
-streamlit run src/web_ui.py
+# 在项目根目录下
+python -m uvicorn src.api_server:app --reload --host 0.0.0.0 --port 8000
 ```
-*   浏览器自动打开 `http://localhost:8501`
+
+**2. 启动前端 (Terminal 2)**
+```bash
+cd frontend-web
+pnpm dev
+```
+
+*   **访问地址**: 打开浏览器访问 `http://localhost:5173`
 
 ### 命令行使用 (Python API)
 ```python
@@ -161,27 +178,20 @@ results = engine.batch_analyze(
 ```
 AI_Resume_Sniper/
 ├── src/
+│   ├── api_server.py            # FastAPI 后端入口
 │   ├── core/                    # 核心引擎
 │   │   ├── engine.py            # 主引擎 (ResumeSniperEngine)
 │   │   ├── config.py            # 配置管理
 │   │   └── exceptions.py        # 异常定义
 │   ├── interfaces/              # 抽象接口 (ABC)
-│   │   ├── illm_provider.py     # LLM提供商接口
-│   │   ├── idocument_parser.py  # 文档解析器接口
-│   │   └── istorage.py          # 存储接口
 │   ├── plugins/                 # 插件实现
 │   │   ├── llm_providers/       # LLM提供商
-│   │   │   ├── deepseek.py
-│   │   │   ├── openai.py
-│   │   │   └── anthropic.py
 │   │   ├── document_parsers/    # 文档解析器
-│   │   │   ├── pdf_parser.py
-│   │   │   ├── docx_parser.py
-│   │   │   └── text_parser.py
 │   │   └── storage/             # 存储后端
-│   │       ├── local_storage.py
-│   │       └── memory_cache.py
-│   └── web_ui.py                # Web界面
+├── frontend-web/                # React 前端
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.ts
 └── config/
     ├── config.yaml              # 主配置文件
     └── .env.example             # 环境变量模板

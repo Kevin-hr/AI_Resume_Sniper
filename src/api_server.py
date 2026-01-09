@@ -246,7 +246,8 @@ async def analyze_resume_stream(
             stream_with_ping(engine.analyze_resume_stream(
                 resume_text=resume_text,
                 jd_text=final_jd_text,
-                persona=persona
+                persona=persona,
+                use_cache=False  # Disable cache for streaming to ensure reasoning/thinking process is shown
             )),
             media_type="text/event-stream"
         )

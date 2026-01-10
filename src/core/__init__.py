@@ -6,7 +6,7 @@ Plugin system core modules.
 
 from .config import ConfigManager, AppConfig, get_config, reload_config
 from .exceptions import (
-    ResumeSniperError,
+    TalentOSError,
     PluginError,
     PluginNotFoundError,
     LLMProviderError,
@@ -22,7 +22,7 @@ __all__ = [
     'AppConfig',
     'get_config',
     'reload_config',
-    'ResumeSniperError',
+    'TalentOSError',
     'PluginError',
     'PluginNotFoundError',
     'LLMProviderError',

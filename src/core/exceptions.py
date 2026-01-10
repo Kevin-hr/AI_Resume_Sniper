@@ -83,11 +83,11 @@ class CacheKeyError(StorageError):
     pass
 
 
-class ConfigurationError(ResumeSniperError):
+class ConfigurationError(TalentOSError):
     """Raised when configuration is invalid."""
     pass
 
 
-class AnalysisError(ResumeSniperError):
+class AnalysisError(TalentOSError):
     """Raised when resume analysis fails."""
     pass

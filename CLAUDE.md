@@ -14,8 +14,8 @@ pip install streamlit openai python-dotenv pdfplumber python-docx pyyaml httpx f
 # Configure Cloudflare Tunnel / 配置隧道
 .\setup_tunnel.ps1
 
-# Run Web UI (Local) / 运行本地Web界面
-streamlit run src/web_app.py
+# Run Web UI (React) / 运行Web界面
+cd frontend-web; pnpm dev
 
 # Run API Server (Local) / 运行本地API服务
 python -m uvicorn src.api_server:app --reload
@@ -50,7 +50,7 @@ frontend-web/             # React Frontend (Port 8501)
 
 ---
 
-## Configuration / 配置
+## Usage / 使用
 
 ```python
 from src.core.engine import create_engine

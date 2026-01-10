@@ -6,7 +6,7 @@ from pathlib import Path
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.core.engine import ResumeSniperEngine
+from src.core.engine import TalentOSEngine
 
 OUTPUT_DIR = Path("tests/fixtures/resumes")
 

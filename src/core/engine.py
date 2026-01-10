@@ -1111,19 +1111,19 @@ LANGUAGE: Chinese (Simplified).
         return status
 
 
-def create_engine(config_path: str = None, **kwargs) -> ResumeSniperEngine:
+def create_engine(config_path: str = None, **kwargs) -> TalentOSEngine:
     """
-    Factory function to create a ResumeSniperEngine instance.
+    Factory function to create a TalentOSEngine instance.
 
     Args:
         config_path: Path to config file
         **kwargs: Additional configuration overrides
 
     Returns:
-        ResumeSniperEngine instance
+        TalentOSEngine instance
     """
     if config_path:
         from src.core.config import reload_config
         reload_config(config_path)
 
-    return ResumeSniperEngine(**kwargs)
+    return TalentOSEngine(**kwargs)

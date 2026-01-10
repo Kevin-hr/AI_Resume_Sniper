@@ -1,29 +1,29 @@
 """
-Resume Sniper Package / 简历狙击手主包
+TalentOS Package / 人才操作系统主包
 
-v1.3 Plugin-based architecture.
+v1.0 Plugin-based architecture.
 """
 
-from .core.engine import ResumeSniperEngine, create_engine, AnalysisResult
+from .core.engine import TalentOSEngine, create_engine, AnalysisResult
 from .core.config import get_config, reload_config, AppConfig
 from .core.exceptions import (
-    ResumeSniperError,
+    TalentOSError,
     PluginError,
     LLMProviderError,
     DocumentParserError,
     StorageError,
 )
 
-__version__ = "1.3.0"
+__version__ = "1.0.0"
 
 __all__ = [
-    'ResumeSniperEngine',
+    'TalentOSEngine',
     'create_engine',
     'AnalysisResult',
     'get_config',
     'reload_config',
     'AppConfig',
-    'ResumeSniperError',
+    'TalentOSError',
     'PluginError',
     'LLMProviderError',
     'DocumentParserError',

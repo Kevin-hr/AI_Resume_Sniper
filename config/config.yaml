@@ -1,8 +1,8 @@
-# AI Resume Sniper Configuration / AI简历狙击手配置
-# Version: 1.3.0
+# TalentOS Configuration / 人才操作系统配置
+# Version: 1.0.0
 
-app_name: "AI Resume Sniper"
-version: "1.3.0"
+app_name: "TalentOS"
+version: "1.0.0"
 debug: false
 log_level: "INFO"
 

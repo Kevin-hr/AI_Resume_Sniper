@@ -1,7 +1,7 @@
 """
 Configuration Management / 配置管理
 
-Centralized configuration for Resume Sniper plugin system.
+Centralized configuration for TalentOS plugin system.
 Supports YAML config file and environment variables.
 """
 

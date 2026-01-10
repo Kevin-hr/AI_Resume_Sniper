@@ -17,25 +17,25 @@ from pydantic import BaseModel
 # Add parent directory to path to allow imports from src
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.core.engine import ResumeSniperEngine
+from src.core.engine import TalentOSEngine
 from src.core.config import get_config
-from src.core.exceptions import ResumeSniperError, UnsupportedFormatError
+from src.core.exceptions import TalentOSError, UnsupportedFormatError
 from src.plugins.document_parsers import get_parser_for_file, get_parser
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("api_server")
+logger = logging.getLogger("talentos_api")
 
 # Global Engine Instance
-engine: Optional[ResumeSniperEngine] = None
+engine: Optional[TalentOSEngine] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Initialize engine on startup."""
     global engine
     try:
-        logger.info("Initializing Resume Sniper Engine...")
-        engine = ResumeSniperEngine()
+        logger.info("Initializing TalentOS Engine...")
+        engine = TalentOSEngine()
         logger.info("Engine initialized successfully.")
     except Exception as e:
         logger.error(f"Failed to initialize engine: {e}")
@@ -45,8 +45,8 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down...")
 
 app = FastAPI(
-    title="AI Resume Sniper API",
-    description="Backend API for AI Resume Sniper (WeChat Mini Program compatible)",
+    title="TalentOS API",
+    description="Backend API for TalentOS (The Career Operating System)",
     version="1.0.0",
     lifespan=lifespan
 )

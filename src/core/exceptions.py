@@ -1,20 +1,20 @@
 """
 Custom Exceptions / 自定义异常
 
-Exception hierarchy for Resume Sniper plugin system.
+Exception hierarchy for TalentOS plugin system.
 """
 
 from typing import Optional
 
 
-class ResumeSniperError(Exception):
-    """Base exception for all Resume Sniper errors."""
+class TalentOSError(Exception):
+    """Base exception for all TalentOS errors."""
     def __init__(self, message: str, details: Optional[dict] = None):
         super().__init__(message)
         self.details = details or {}
 
 
-class PluginError(ResumeSniperError):
+class PluginError(TalentOSError):
     """Base exception for plugin-related errors."""
     pass
 

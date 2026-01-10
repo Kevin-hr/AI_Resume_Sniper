@@ -1,6 +1,6 @@
-# � Product Requirement Document (PRD): AI Resume Sniper
+#  Product Requirement Document (PRD): TalentOS
 
-> **Version**: 1.1 (Refined)
+> **Version**: 2.0 (Rebranded)
 > **Status**: Development
 > **Owner**: Digital Life Kha'Zix
 > **Type**: Automation Asset (SaaS)
@@ -8,11 +8,11 @@
 ## 1. Product Overview (产品概览)
 
 ### 1.1 Vision (愿景)
-To become the standard "Pre-Flight Check" for job seekers, providing a professional, automated, and unbiased HRBP-grade resume audit in under 60 seconds.
+To become the standard "Career Operating System" for job seekers and recruiters, providing a professional, automated, and unbiased HRBP-grade resume audit and matching system.
 
 ### 1.2 Core Value Proposition (核心价值)
-*   **For Users**: Pass ATS filters and survive the "6-second HR scan".
-*   **For Owner**: A fully automated, high-margin asset with zero marginal cost of replication.
+*   **For Users (Career Hacker)**: Pass ATS filters and survive the "6-second HR scan".
+*   **For HR (Talent Radar)**: A fully automated, high-margin asset with zero marginal cost of replication.
 
 ### 1.3 Success Metrics (KPIs) - MVP
 *   **Conversion Rate**: Visitor to Upload > 15%.

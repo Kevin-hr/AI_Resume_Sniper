@@ -105,7 +105,9 @@ def test_analyze():
             print(f"Warning: Cleanup failed: {e}")
 
 def main():
-    print("=== AI Resume Sniper Backend Verification ===")
+    print("\n" + "="*50)
+    print("TalentOS Setup Verification")
+    print("="*50 + "\n")
     check_env_vars()
     if check_health():
         test_analyze()

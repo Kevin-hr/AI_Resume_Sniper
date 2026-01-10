@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Automated Cloudflare Tunnel Setup Script for AI Resume Sniper
+    Automated Cloudflare Tunnel Setup Script for TalentOS
     
 .DESCRIPTION
     This script automates the setup of Cloudflare Tunnel to expose:
@@ -8,7 +8,7 @@
     2. FastAPI Backend (http://localhost:8000/analyze) -> https://bmwuv.com/analyze
     
     It handles:
-    - Tunnel creation (resume-sniper)
+    - Tunnel creation (talentos-tunnel)
     - Configuration file generation (tunnel_config.yml)
     - DNS routing (bmwuv.com)
     
@@ -18,7 +18,7 @@
 #>
 
 $ErrorActionPreference = "Stop"
-$TunnelName = "resume-sniper"
+$TunnelName = "talentos-tunnel"
 $Domain = "bmwuv.com"
 $ConfigFile = "tunnel_config.yml"
 $UserHome = $env:USERPROFILE

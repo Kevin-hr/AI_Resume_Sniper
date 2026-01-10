@@ -1,5 +1,5 @@
 """
-Resume Sniper Engine v1.3 / 简历狙击手引擎 v1.3
+TalentOS Engine v1.0 / 人才操作系统引擎 v1.0
 
 Plugin-based architecture for AI resume analysis.
 """
@@ -25,7 +25,7 @@ except ImportError:
 
 from src.core.config import get_config, AppConfig
 from src.core.exceptions import (
-    ResumeSniperError,
+    TalentOSError,
     PluginNotFoundError,
     LLMProviderError,
     UnsupportedFormatError,
@@ -55,11 +55,11 @@ class AnalysisResult:
             self.metadata = {}
 
 
-class ResumeSniperEngine:
+class TalentOSEngine:
     """
-    Main engine for AI Resume Sniper.
+    Main engine for TalentOS.
 
-    v1.3 introduces plugin-based architecture supporting:
+    v1.0 introduces plugin-based architecture supporting:
     - Multiple LLM providers (DeepSeek, OpenAI, Anthropic)
     - Multiple document parsers (PDF, DOCX, Text)
     - Multiple storage backends (Local, Memory)
@@ -69,7 +69,7 @@ class ResumeSniperEngine:
 
     def __init__(self, config: AppConfig = None, **kwargs):
         """
-        Initialize the Resume Sniper engine.
+        Initialize the TalentOS engine.
 
         Args:
             config: AppConfig object (uses global config if None)

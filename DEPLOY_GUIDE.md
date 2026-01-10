@@ -1,4 +1,4 @@
-# AI Resume Sniper 部署指南
+# TalentOS 部署指南
 
 本指南将帮助你将项目部署为微信小程序后端，并发布小程序。
 
@@ -22,17 +22,18 @@
 ```
 按照脚本提示操作：
 1.  如果没有登录，会自动打开浏览器让你登录 Cloudflare。
-2.  自动创建名为 `resume-sniper` 的 Tunnel。
+2.  自动创建名为 `talentos-tunnel` 的 Tunnel。
 3.  自动配置路由：
-    *   `bmwuv.com/` -> 本地 Streamlit (8501)
+    *   `bmwuv.com/` -> 本地 React Frontend (8501)
     *   `bmwuv.com/analyze` -> 本地 FastAPI (8000)
 
 ### 3. 启动服务
 你需要同时启动三个进程 (建议在三个不同的终端窗口中运行)：
 
-**终端 1 (Streamlit 网页版):**
+**终端 1 (Frontend):**
 ```powershell
-streamlit run src/web_app.py
+cd frontend-web
+pnpm dev
 ```
 
 **终端 2 (FastAPI 后端):**
@@ -42,11 +43,11 @@ python -m uvicorn src.api_server:app --host 127.0.0.1 --port 8000
 
 **终端 3 (Cloudflare Tunnel):**
 ```powershell
-cloudflared tunnel run resume-sniper
+cloudflared tunnel run talentos-tunnel
 ```
 
 ### 4. 验证
-*   访问 `https://bmwuv.com` -> 应该看到 AI Resume Sniper 网页版。
+*   访问 `https://bmwuv.com` -> 应该看到 TalentOS 网页版。
 *   小程序调用 `https://bmwuv.com/analyze` -> 应该能正常分析。
 
 ---

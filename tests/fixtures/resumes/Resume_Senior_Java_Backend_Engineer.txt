@@ -1,0 +1,63 @@
+**Zhang Wei**
+Senior Java Backend Engineer
++86 138 0000 0000 | zhangwei.fake@email.com | Beijing, China | [LinkedIn Profile (Fake)](https://www.linkedin.com/in/zhangwei-fake) | [GitHub (Fake)](https://github.com/zhangwei-fake)
+
+---
+
+### **Professional Summary**
+A results-driven Senior Backend Engineer with over 8 years of experience in designing, developing, and scaling high-performance, distributed systems. Proven expertise in Java ecosystem, microservices architecture, and cloud-native technologies. Passionate about building robust, maintainable backend services and leading technical initiatives to improve system reliability, performance, and developer productivity. Seeking to leverage technical leadership and deep backend knowledge to tackle complex challenges in a high-growth tech environment.
+
+---
+
+### **Work Experience**
+
+**Senior Backend Engineer | TechFuture Inc. (FinTech)**
+*Beijing, China | Mar 2021 – Present*
+*   Led the design and development of a new core payment processing microservice, handling over 500k transactions daily. Architected the system using Spring Boot, achieving 99.99% availability and reducing average transaction latency by 40%.
+*   Spearheaded the migration of a monolithic legacy user management module to a set of independent, containerized microservices (Spring Cloud, Docker, Kubernetes), improving deployment frequency by 300% and team autonomy.
+*   Optimized critical database queries and implemented a multi-level caching strategy (Redis) for high-frequency read operations, reducing database load by 60% and improving API response times by 70%.
+*   Established and enforced coding standards, conducted code reviews, and mentored 3 junior engineers, fostering a culture of technical excellence and knowledge sharing within the team.
+*   Collaborated with SRE to design and implement comprehensive monitoring, logging (ELK stack), and alerting solutions, significantly improving system observability and MTTR for production incidents.
+
+**Backend Engineer | CloudSolutions Co., Ltd. (SaaS)**
+*Shanghai, China | Jul 2017 – Feb 2021*
+*   Developed and maintained core backend services for a large-scale B2B SaaS platform using Java 8/11, Spring Framework (Spring MVC, Spring Data JPA), and MySQL.
+*   Designed and implemented RESTful APIs consumed by web and mobile clients, ensuring security (OAuth2, JWT), performance, and scalability. API documentation was managed using Swagger/OpenAPI.
+*   Integrated with multiple third-party services (payment gateways, SMS, cloud storage) and message queues (RabbitMQ) for asynchronous task processing, enhancing system decoupling and reliability.
+*   Participated in the full software development lifecycle, including requirement analysis, system design, coding, unit/integration testing (JUnit, Mockito), and deployment.
+*   Contributed to the adoption of CI/CD practices using Jenkins, which automated build, test, and deployment pipelines.
+
+**Software Engineer | StartUp Innovations**
+*Hangzhou, China | Jun 2015 – Jun 2017*
+*   Developed backend modules for an early-stage e-commerce platform using Java and the Spring framework.
+*   Responsible for user authentication, product catalog, and order management features.
+*   Gained foundational experience in full-stack development, working with frontend technologies (HTML, CSS, JavaScript) and basic Linux server administration.
+
+---
+
+### **Education**
+
+**Master of Engineering in Software Engineering**
+Zhejiang University | Hangzhou, China | Sep 2012 – Jun 2015
+*Thesis: Research on Performance Optimization Strategies for Distributed Caching Systems*
+
+**Bachelor of Science in Computer Science**
+Nanjing University | Nanjing, China | Sep 2008 – Jun 2012
+
+---
+
+### **Technical Skills**
+
+*   **Languages & Core:** Java (8/11/17), Kotlin (Proficient), SQL, Shell Scripting
+*   **Frameworks & Libraries:** Spring Boot, Spring Cloud (Netflix OSS / Alibaba), Spring MVC, Spring Data JPA, MyBatis, Hibernate, JUnit 5, Mockito
+*   **Databases & Caching:** MySQL, PostgreSQL, Redis, Elasticsearch, MongoDB
+*   **Message Brokers & Streaming:** RabbitMQ, Apache Kafka
+*   **Cloud & DevOps:** AWS (EC2, S3, RDS, EKS), Docker, Kubernetes, Helm, Jenkins, GitLab CI/CD, Prometheus, Grafana, ELK Stack
+*   **Tools & Practices:** Git, Maven, Gradle, IntelliJ IDEA, Postman, Swagger/OpenAPI, Agile/Scrum, Microservices Architecture, DDD, API Design, System Design
+
+### **Soft Skills & Languages**
+*   Technical Leadership & Mentoring
+*   Problem-Solving & Analytical Thinking
+*   Effective Communication & Collaboration
+*   Project Ownership & Proactive Mindset
+*   **Languages:** Chinese (Native), English (Fluent, Professional Working Proficiency)

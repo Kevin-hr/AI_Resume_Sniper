@@ -1,0 +1,54 @@
+**ZHANG WEI**
+---
+**Data Scientist | NLP Specialist**
+Beijing, China | +86 138 0000 0000 | zhangwei.ds@email.com | [LinkedIn Profile] | [GitHub Portfolio]
+
+---
+
+### **Professional Summary**
+Results-driven Data Scientist with 5+ years of experience specializing in Natural Language Processing (NLP) and Machine Learning. Proven expertise in designing, developing, and deploying end-to-end NLP solutions, including large language model (LLM) applications, information extraction, and text classification systems. Adept at translating complex business requirements into scalable, production-ready models. Passionate about leveraging cutting-edge AI to solve real-world problems and drive data-informed decision-making.
+
+---
+
+### **Work Experience**
+
+**Senior Data Scientist (NLP Focus)**
+**TechVision AI, Beijing** | *Mar 2021 – Present*
+*   Led the development and deployment of a customer intent classification system using BERT and RoBERTa, improving automated ticket routing accuracy by 35% and reducing average handling time by 25%.
+*   Architected and implemented a Retrieval-Augmented Generation (RAG) pipeline for the internal knowledge base, enabling a ChatGPT-like Q&A system that decreased information retrieval time for support staff by 60%.
+*   Built and fine-tuned custom NER models to extract key entities (e.g., product names, technical issues) from unstructured customer service logs, automating data entry for over 10,000 monthly tickets.
+*   Collaborated with MLOps engineers to containerize NLP models using Docker and establish CI/CD pipelines on Kubernetes, ensuring robust model serving and A/B testing capabilities.
+*   Mentored 2 junior data scientists on best practices in deep learning, model evaluation, and code versioning with Git.
+
+**Data Scientist**
+**GlobalE-Commerce Inc., Shanghai** | *Jul 2018 – Feb 2021*
+*   Developed a multi-label text classification model to categorize product reviews into sentiment and aspect categories (e.g., "Battery Life - Negative"), providing granular insights that informed product development priorities.
+*   Implemented a semantic search engine for the product catalog using Sentence-BERT, enhancing search relevance and increasing user click-through rate by 18%.
+*   Conducted topic modeling (LDA, BERTopic) on user-generated content to identify emerging market trends and customer pain points, presenting findings to the product management team quarterly.
+*   Automated the generation of weekly analytics reports on customer feedback, saving approximately 15 analyst hours per week.
+
+---
+
+### **Education**
+
+**Master of Science in Computer Science (Artificial Intelligence Specialization)**
+*Fudan University, Shanghai* | *Sep 2015 – Jun 2018*
+*   Thesis: "Improving Low-Resource Language NER with Cross-Lingual Transfer Learning" (Published at ACL SRW 2018)
+*   Relevant Coursework: Advanced Natural Language Processing, Deep Learning, Statistical Machine Learning, Information Retrieval
+
+**Bachelor of Engineering in Software Engineering**
+*Harbin Institute of Technology, Harbin* | *Sep 2011 – Jun 2015*
+*   Graduated with Honors (Top 10%)
+
+---
+
+### **Technical Skills**
+*   **Programming & Databases:** Python (Proficient), SQL, PySpark, Bash
+*   **ML/NLP Libraries:** PyTorch, TensorFlow, Hugging Face Transformers, LangChain, LlamaIndex, spaCy, NLTK, scikit-learn
+*   **NLP Expertise:** LLM Application Development (RAG, Agentic Workflows), Text Classification, Named Entity Recognition (NER), Sentiment Analysis, Text Summarization, Semantic Search, Topic Modeling, Transformer Architectures (BERT, GPT, T5)
+*   **MLOps & Cloud:** Docker, Kubernetes, Git, MLflow, Airflow, AWS (SageMaker, S3, EC2), Basic Azure AI Services
+*   **Data Visualization & Tools:** Matplotlib, Seaborn, Plotly, Jupyter, VS Code, Confluence, Jira
+
+### **Soft Skills & Languages**
+*   Problem-Solving & Critical Thinking | Cross-functional Collaboration | Project Management | Technical Mentoring | Clear Communication of Complex Concepts
+*   **Languages:** Mandarin Chinese (Native), English (Fluent, TOEFL iBT 108)

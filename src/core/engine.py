@@ -164,6 +164,358 @@ class ResumeSniperEngine:
         LANGUAGE: Chinese (Simplified).
         """
 
+    def _get_jd_optimization_prompt(self) -> str:
+        """Get prompt for JD optimization."""
+        return """
+        You are a Senior Talent Acquisition Specialist and Hiring Manager at a top-tier Tech Giant.
+        Your goal is to optimize a Job Description (JD) to attract top talent while filtering out unqualified candidates.
+
+        Analyze the provided JD and output the result in the following Markdown format:
+
+        ## 1. 🔍 JD Diagnostic (JD 诊断)
+        - **Clarity Score**: (0-100)
+        - **Key Issues**: List 3 main problems with the original JD (e.g., vague requirements, boring tone, unrealistic expectations).
+
+        ## 2. ✨ Optimized JD (优化后 JD)
+        Rewrite the JD using the standard structure:
+        - **Job Title**: (Refine if necessary)
+        - **About the Role (职位诱惑)**: 3 sentences selling the vision/impact.
+        - **Key Responsibilities (岗位职责)**: Clear, action-oriented bullet points.
+        - **Requirements (任职要求)**: Split into "Must-Haves" and "Nice-to-Haves".
+        
+        ## 3. 💡 Hiring Strategy (招聘策略)
+        - **Target Candidate Profile**: Describe the ideal candidate persona in 1 sentence.
+        - **Screening Questions**: Suggest 3 interview questions to ask.
+
+        TONE: Professional, Engaging, Precise.
+        LANGUAGE: Chinese (Simplified).
+        """
+
+    def optimize_jd(
+        self,
+        jd_text: str,
+        use_cache: bool = True,
+        **kwargs
+    ) -> AnalysisResult:
+        """
+        Optimize a Job Description.
+        """
+        # Cache Key
+        if use_cache and self._storage:
+            cache_key = self._generate_cache_key(jd_text, "JD_OPTIMIZATION", "headhunter")
+            cached = self._storage.load(cache_key)
+            if cached:
+                 return AnalysisResult(
+                    report=cached["report"],
+                    score=cached.get("score"),
+                    model=cached.get("model", ""),
+                    tokens_used=cached.get("tokens_used", 0),
+                    cached=True,
+                    metadata={"cache_key": cache_key, "type": "jd_optimization"}
+                )
+
+        # Prompt
+        system_prompt = self._get_jd_optimization_prompt()
+        user_prompt = f"Here is the original JD:\n\n{jd_text}\n\nPlease optimize it."
+
+        # Get model config
+        model = kwargs.pop("model", None)
+        temperature = kwargs.pop("temperature", 0.7)
+        if self._config.get_model_config(self._current_provider):
+            model_info = self._config.get_model_config(self._current_provider, model)
+            if model_info:
+                temperature = model_info.temperature
+                model = model_info.name
+
+        # Call LLM
+        start_time = time.time()
+        try:
+            response = self._call_llm_with_retry(
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                model=model,
+                temperature=temperature,
+                **kwargs
+            )
+
+            latency_ms = (time.time() - start_time) * 1000
+            report = response.content
+            score = self._extract_score(report) # Extract clarity score if possible
+
+            result = AnalysisResult(
+                report=report,
+                score=score,
+                model=response.model,
+                tokens_used=response.tokens_used,
+                latency_ms=latency_ms,
+                cached=False,
+                metadata={"type": "jd_optimization", "provider": self._current_provider}
+            )
+
+            # Save to cache
+            if use_cache and self._storage:
+                cache_key = self._generate_cache_key(jd_text, "JD_OPTIMIZATION", "headhunter")
+                self._storage.save(
+                    cache_key,
+                    {
+                        "report": report,
+                        "score": score,
+                        "model": response.model,
+                        "tokens_used": response.tokens_used
+                    },
+                    ttl=self._config.storage.cache_ttl
+                )
+
+            return result
+
+        except LLMProviderError as e:
+                raise AnalysisError(f"LLM provider error: {e}")
+
+    def _get_extraction_prompt(self) -> str:
+        """Get prompt for resume data extraction."""
+        return """
+        You are an expert HR Data Analyst.
+        Extract key information from the resume into a structured JSON format.
+        
+        Required Fields:
+        - name: Full name
+        - email: Email address
+        - phone: Phone number
+        - education: List of {school, degree, major, year}
+        - experience: List of {company, title, duration, key_achievements}
+        - skills: List of professional skills
+        - years_of_experience: Number (estimate)
+        - current_company: Most recent company name
+        - current_position: Most recent job title
+
+        Output strictly valid JSON only. Do not wrap in markdown code blocks.
+        """
+
+    def extract_resume_fields(
+        self,
+        resume_text: str,
+        use_cache: bool = True,
+        **kwargs
+    ) -> Dict[str, Any]:
+        """
+        Extract structured data from resume.
+        """
+        # Cache Key
+        if use_cache and self._storage:
+            cache_key = self._generate_cache_key(resume_text, "EXTRACTION", "parser")
+            cached = self._storage.load(cache_key)
+            if cached:
+                return cached
+
+        # Prompt
+        system_prompt = self._get_extraction_prompt()
+        user_prompt = f"Resume Content:\n\n{resume_text}"
+
+        # Get model config
+        model = kwargs.pop("model", None)
+        temperature = kwargs.pop("temperature", 0.1) # Low temp for extraction
+        if self._config.get_model_config(self._current_provider):
+            model_info = self._config.get_model_config(self._current_provider, model)
+            if model_info:
+                model = model_info.name
+
+        try:
+            response = self._call_llm_with_retry(
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                model=model,
+                temperature=temperature,
+                **kwargs
+            )
+
+            # Parse JSON
+            content = response.content.strip()
+            # Handle markdown code blocks if present
+            if content.startswith("```json"):
+                content = content[7:]
+            if content.endswith("```"):
+                content = content[:-3]
+            
+            try:
+                data = json.loads(content)
+            except json.JSONDecodeError:
+                # Fallback or retry? For now, return raw content wrapped
+                data = {"raw_content": content, "error": "Failed to parse JSON"}
+
+            # Add metadata
+            data["_metadata"] = {
+                "model": response.model,
+                "tokens_used": response.tokens_used
+            }
+
+            # Save to cache
+            if use_cache and self._storage:
+                cache_key = self._generate_cache_key(resume_text, "EXTRACTION", "parser")
+                self._storage.save(cache_key, data, ttl=self._config.storage.cache_ttl)
+
+            return data
+
+        except LLMProviderError as e:
+            raise AnalysisError(f"LLM provider error: {e}")
+
+    def _get_match_prompt(self) -> str:
+        """Get prompt for candidate-job matching."""
+        return """
+        You are an Expert Technical Recruiter and Hiring Manager.
+        Compare the Candidate Resume against the Job Description (JD).
+        
+        Perform a multi-dimensional analysis and output strictly valid JSON:
+        {
+            "score": 0-100 (integer, overall weighted score),
+            "status": "Suitable" or "Unsuitable" (Suitable if score >= 70),
+            "dimensions": {
+                "skills": { "score": 0-100, "comment": "..." },
+                "experience": { "score": 0-100, "comment": "..." },
+                "education": { "score": 0-100, "comment": "..." },
+                "soft_skills": { "score": 0-100, "comment": "..." }
+            },
+            "reason": "Concise summary of fit/misfit (max 30 words)",
+            "strengths": ["List", "of", "key", "matches"],
+            "missing": ["List", "of", "missing", "critical", "skills"],
+            "recommendation": "Strong Hire / Hire / Weak Hire / Reject"
+        }
+        
+        LANGUAGE REQUIREMENT:
+        ALL text fields (reason, strengths, missing, comments) MUST be in CHINESE (Simplified).
+        Even if the input is English, the analysis output MUST be CHINESE.
+        """
+
+    def evaluate_match(
+        self,
+        resume_text: str,
+        jd_text: str,
+        use_cache: bool = True,
+        weights: Dict[str, int] = None,
+        **kwargs
+    ) -> Dict[str, Any]:
+        """
+        Evaluate candidate match against JD.
+        """
+        if not jd_text or len(jd_text.strip()) < 10:
+             # Fallback if no JD: just extract
+             return self.extract_resume_fields(resume_text, use_cache, **kwargs)
+
+        # Default weights if not provided
+        if not weights:
+            weights = {"skills": 30, "experience": 30, "education": 20, "soft_skills": 20}
+
+        # Cache Key (include weights in key to avoid stale cache on weight change)
+        weight_str = f"{weights.get('skills')}-{weights.get('experience')}-{weights.get('education')}"
+        if use_cache and self._storage:
+            cache_key = self._generate_cache_key(resume_text + jd_text + weight_str, "MATCH_EVAL_CN_V2", "recruiter")
+            cached = self._storage.load(cache_key)
+            if cached:
+                return cached
+
+        system_prompt = self._get_match_prompt()
+        
+        # Add weights to user prompt
+        weight_instruction = f"""
+        SCORING WEIGHTS PREFERENCE:
+        - Skills: {weights.get('skills', 30)}%
+        - Experience: {weights.get('experience', 30)}%
+        - Education: {weights.get('education', 20)}%
+        - Soft Skills: {weights.get('soft_skills', 20)}%
+        
+        Please calculate the overall score based on these weights.
+        """
+        
+        user_prompt = f"JOB DESCRIPTION:\n{jd_text}\n\nSCORING WEIGHTS:\n{weight_instruction}\n\nCANDIDATE RESUME:\n{resume_text}"
+
+        try:
+            response = self._call_llm_with_retry(
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.2, # Low temp for consistent scoring
+                **kwargs
+            )
+
+            content = response.content.strip()
+            # Cleanup JSON
+            if content.startswith("```json"): content = content[7:]
+            if content.endswith("```"): content = content[:-3]
+            
+            try:
+                data = json.loads(content)
+            except:
+                data = {"score": 0, "status": "Error", "reason": "Failed to parse analysis", "raw": content}
+
+            # Save to cache
+            if use_cache and self._storage:
+                cache_key = self._generate_cache_key(resume_text + jd_text + weight_str, "MATCH_EVAL_CN_V2", "recruiter")
+                self._storage.save(cache_key, data, ttl=self._config.storage.cache_ttl)
+
+            return data
+
+        except LLMProviderError as e:
+            raise AnalysisError(f"LLM provider error: {e}")
+
+    def generate_message(
+        self,
+        msg_type: str,
+        candidate_data: Dict,
+        job_data: Dict,
+        options: Dict
+    ) -> str:
+        """
+        Generate HR communication message (Reject/Invite).
+        """
+        name = candidate_data.get("name", "候选人")
+        role = job_data.get("role", "该职位")
+        
+        if msg_type == "reject":
+            style = options.get("style", "Professional")
+            reason = candidate_data.get("reason", "暂时不匹配")
+            prompt = f"""
+            Write a {style} rejection email for {name} applying for {role}.
+            Context: {reason}.
+            Keep it polite, professional, and concise.
+            LANGUAGE: CHINESE (Simplified).
+            """
+        elif msg_type == "invite":
+            time_slot = options.get("time", "待定")
+            interviewer = options.get("interviewer", "")
+            tips = options.get("tips", "")
+            prompt = f"""
+            Write an interview invitation email for {name} applying for {role}.
+            Details:
+            - Time: {time_slot}
+            - Interviewer: {interviewer}
+            - Tips: {tips}
+            Keep it professional and encouraging.
+            LANGUAGE: CHINESE (Simplified).
+            """
+        else:
+            return "Invalid message type."
+
+        response = self._call_llm_with_retry(
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7
+        )
+        return response.content
+
+    def translate_text(self, text: str, target_lang: str = "Chinese") -> str:
+        """Translate text to target language."""
+        prompt = f"Translate the following text to {target_lang}. Maintain professional tone.\n\n{text}"
+        response = self._call_llm_with_retry(
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3
+        )
+        return response.content
+
+
+
     def _setup_llm_provider(self, provider_name: str = None):
         """Initialize the LLM provider."""
         provider = provider_name or self._get_default_provider()

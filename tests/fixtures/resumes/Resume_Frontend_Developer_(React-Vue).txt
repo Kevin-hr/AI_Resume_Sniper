@@ -1,0 +1,66 @@
+**LI MING**
+Frontend Developer (React/Vue)
++86 138 0000 0000 | liming.dev@fakeemail.com | Beijing, China | GitHub: github.com/liming-dev | LinkedIn: linkedin.com/in/liming-dev
+
+---
+
+### **Professional Summary**
+A results-driven Frontend Developer with 4+ years of experience specializing in building modern, responsive, and high-performance web applications using React and Vue.js. Passionate about creating intuitive user interfaces, optimizing application performance, and collaborating within agile teams to deliver scalable solutions. Proven ability to translate business requirements into clean, maintainable, and efficient code.
+
+---
+
+### **Work Experience**
+
+**Senior Frontend Developer** | TechFlow Solutions Inc., Beijing
+*Mar 2022 – Present*
+*   Led the frontend development of a new B2B SaaS dashboard using React 18, TypeScript, and Redux Toolkit, improving data visualization load times by 40%.
+*   Architected and implemented a reusable component library with Storybook, standardizing UI patterns and reducing development time for new features by ~25%.
+*   Optimized core web vitals (LCP, FID, CLS) for key user flows, achieving a Lighthouse performance score above 90 for mobile.
+*   Mentored 2 junior developers in React best practices, code reviews, and state management patterns.
+*   Collaborated closely with UX/UI designers and backend engineers using Agile/Scrum methodologies.
+
+**Frontend Developer** | E-Commerce Innovations Ltd., Shanghai
+*Jun 2020 – Feb 2022*
+*   Developed and maintained customer-facing e-commerce platforms and admin panels using Vue.js 2/3 and Vuex.
+*   Implemented server-side rendering (SSR) with Nuxt.js for critical product listing pages, improving SEO ranking and initial page load performance.
+*   Integrated with RESTful and GraphQL APIs, ensuring robust data handling and error management.
+*   Wrote comprehensive unit and integration tests using Jest and Vue Test Utils, achieving over 85% code coverage.
+*   Participated in the migration of a legacy jQuery codebase to a modern Vue.js SPA.
+
+**Junior Web Developer** | Digital Creative Agency, Shanghai
+*Jul 2019 – May 2020*
+*   Built responsive websites and landing pages for clients using HTML5, CSS3 (Sass), and JavaScript (ES6+).
+*   Assisted in developing interactive features and components using React for larger client projects.
+*   Conducted cross-browser testing and performance audits to ensure consistent user experience.
+*   Gained foundational experience with Git, Webpack, and working in a collaborative team environment.
+
+---
+
+### **Education**
+
+**Bachelor of Engineering in Software Engineering**
+East China University of Science and Technology, Shanghai
+*Sep 2015 – Jun 2019*
+*   Relevant Coursework: Web Technologies, Data Structures & Algorithms, Human-Computer Interaction
+
+---
+
+### **Technical Skills**
+
+*   **Languages & Frameworks:** JavaScript (ES6+), TypeScript, React.js, Vue.js (2/3), Next.js, Nuxt.js
+*   **State Management:** Redux (Toolkit), Vuex, Pinia, React Context API
+*   **Styling:** CSS3, Sass/SCSS, Tailwind CSS, Styled-Components, CSS Modules, UI Libraries (Ant Design, Element Plus)
+*   **Build Tools & Testing:** Vite, Webpack, Jest, React Testing Library, Vue Test Utils, Cypress
+*   **Tools & Platforms:** Git, GitHub/GitLab, npm/yarn, Docker, Figma, Jira, Agile/Scrum
+*   **Core Concepts:** Responsive & Adaptive Design, Web Performance Optimization, PWA, REST/GraphQL APIs, CI/CD
+
+### **Soft Skills**
+*   Problem-Solving & Analytical Thinking
+*   Effective Communication & Team Collaboration
+*   Proactive Learning & Adaptability
+*   Attention to Detail & User-Centric Mindset
+*   Mentoring & Knowledge Sharing
+
+### **Languages**
+*   Chinese (Native)
+*   English (Professional Working Proficiency - Fluent in technical reading/writing)

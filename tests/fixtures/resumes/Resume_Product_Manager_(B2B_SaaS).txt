@@ -1,0 +1,60 @@
+**LI MING**  
+Shanghai, China | +86 138 0000 0000 | liming.fake@email.com | LinkedIn: linkedin.com/in/liming-fake
+
+---
+
+### **Professional Summary**  
+Results-driven Product Manager with 8+ years of experience in the B2B SaaS space, specializing in scaling product-market fit, driving user adoption, and delivering measurable business impact. Proven track record of leading cross-functional teams to launch and iterate on data-driven products that solve complex customer problems. Passionate about translating market insights into actionable product strategy and roadmaps.
+
+---
+
+### **Work Experience**
+
+**Senior Product Manager**  
+*DataCloud Inc. (Enterprise Data Analytics Platform)* | Shanghai, China  
+*Mar 2021 – Present*  
+
+*   Owned the product strategy and roadmap for the core analytics module, serving 500+ enterprise clients. Conducted extensive user research and competitive analysis to identify key market gaps.
+*   Led the end-to-end launch of the "Insights AI" feature, which uses machine learning to auto-generate business insights. Feature contributed to a **28% increase in user engagement** and was directly responsible for **$2.5M in ARR** within the first year.
+*   Collaborated closely with Engineering, Design, and Sales to define PRDs, prioritize the backlog using RICE framework, and ensure timely delivery of high-quality releases.
+*   Established and monitored key product metrics (DAU/MAU, feature adoption, NPS). Drove initiatives that improved customer retention by **15%** through targeted onboarding and feature education.
+*   Acted as the primary product evangelist, presenting roadmap updates to key enterprise accounts and gathering critical feedback for future iterations.
+
+**Product Manager**  
+*SaaSFlow Co. (Workflow Automation Software)* | Beijing, China  
+*Jun 2018 – Feb 2021*  
+
+*   Managed the platform's integration ecosystem, including API development and third-party app partnerships (e.g., Salesforce, Slack). Increased the number of available integrations from 15 to 50+.
+*   Spearheaded the redesign of the workflow builder UI/UX, reducing the time for customers to build their first automation by **40%**. This led to a significant decrease in early-stage churn.
+*   Worked with Customer Success to analyze support ticket data, identifying top user pain points. Prioritized and shipped solutions that reduced related support volume by **25%**.
+*   Facilitated bi-weekly sprint planning, grooming, and retrospectives with an agile development team of 8 engineers.
+
+**Associate Product Manager / Business Analyst**  
+*TechSolutions Ltd.* | Shenzhen, China  
+*Jul 2016 – May 2018*  
+
+*   Supported senior PMs in market research, user story creation, and acceptance testing for an internal CRM tool.
+*   Built detailed business cases and financial models for new product features, which informed executive prioritization decisions.
+*   Created and maintained comprehensive product documentation, including user guides and release notes.
+
+---
+
+### **Education**
+
+**Master of Science in Information Systems**  
+*Fudan University* | Shanghai, China  
+*Sep 2014 – Jun 2016*
+
+**Bachelor of Engineering in Software Engineering**  
+*Wuhan University* | Wuhan, China  
+*Sep 2010 – Jun 2014*
+
+---
+
+### **Skills**
+
+*   **Product Strategy & Lifecycle:** Product Vision & Roadmapping, Go-to-Market Strategy, A/B Testing, Prioritization Frameworks (RICE, Kano, MoSCoW), P&L Awareness
+*   **Technical Acumen:** SQL (Advanced), APIs, Basic Python for Data Analysis, Agile/Scrum, SaaS Metrics (ARR, Churn, LTV, CAC), Familiarity with ML/AI concepts
+*   **User-Centric Design:** User Research & Interviews, Journey Mapping, Wireframing (Figma, Balsamiq), Usability Testing, Design Sprint Facilitation
+*   **Analytics & Execution:** Data Analysis (Amplitude, Mixpanel, Google Analytics), OKR Setting, PRD/Writing, Cross-functional Team Leadership, Stakeholder Management
+*   **Languages:** Mandarin Chinese (Native), English (Fluent, Professional Working Proficiency)
